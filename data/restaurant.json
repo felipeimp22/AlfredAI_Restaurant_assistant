@@ -1,0 +1,163 @@
+[
+    {
+      "menu": [
+        {
+          "dish": "Mac and Cheese",
+          "description": "Creamy homemade macaroni and cheese with a crispy breadcrumb topping",
+          "price": 12.99,
+          "ingredients": ["pasta", "cheddar cheese", "milk", "butter", "breadcrumbs"],
+          "category": "Main",
+          "sold": 125
+        },
+        {
+          "dish": "Classic Burger",
+          "description": "Juicy beef patty with lettuce, tomato, onions, and special sauce",
+          "price": 14.99,
+          "ingredients": ["beef", "lettuce", "tomato", "onion", "bun", "special sauce"],
+          "category": "Main",
+          "sold": 210
+        },
+        {
+          "dish": "Caesar Salad",
+          "description": "Crisp romaine lettuce with parmesan cheese, croutons, and Caesar dressing",
+          "price": 9.99,
+          "ingredients": ["romaine lettuce", "parmesan cheese", "croutons", "caesar dressing"],
+          "category": "Starter",
+          "sold": 87
+        },
+        {
+          "dish": "Chocolate Lava Cake",
+          "description": "Warm chocolate cake with a molten center, served with vanilla ice cream",
+          "price": 8.99,
+          "ingredients": ["chocolate", "flour", "sugar", "eggs", "vanilla ice cream"],
+          "category": "Dessert",
+          "sold": 94
+        },
+        {
+          "dish": "Margherita Pizza",
+          "description": "Traditional Italian pizza with tomato sauce, fresh mozzarella, and basil",
+          "price": 16.99,
+          "ingredients": ["pizza dough", "tomato sauce", "mozzarella cheese", "basil"],
+          "category": "Main",
+          "sold": 178
+        }
+      ],
+      "customers": [
+        {
+          "id": "cust-001",
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "phone": "555-123-4567",
+          "visits": 8,
+          "purchased": [
+            { "dish": "Mac and Cheese", "quantity": 3 },
+            { "dish": "Classic Burger", "quantity": 2 },
+            { "dish": "Chocolate Lava Cake", "quantity": 4 }
+          ],
+          "history": [
+            { "date": "2025-03-15", "dish": "Mac and Cheese", "quantity": 1 },
+            { "date": "2025-03-15", "dish": "Chocolate Lava Cake", "quantity": 1 },
+            { "date": "2025-02-28", "dish": "Classic Burger", "quantity": 1 },
+            { "date": "2025-02-28", "dish": "Mac and Cheese", "quantity": 1 },
+            { "date": "2025-02-14", "dish": "Chocolate Lava Cake", "quantity": 1 }
+          ]
+        },
+        {
+          "id": "cust-002",
+          "name": "Jane Smith",
+          "email": "jane.smith@example.com",
+          "phone": "555-987-6543",
+          "visits": 5,
+          "purchased": [
+            { "dish": "Caesar Salad", "quantity": 3 },
+            { "dish": "Margherita Pizza", "quantity": 2 }
+          ],
+          "history": [
+            { "date": "2025-03-20", "dish": "Caesar Salad", "quantity": 1 },
+            { "date": "2025-03-20", "dish": "Margherita Pizza", "quantity": 1 },
+            { "date": "2025-03-01", "dish": "Caesar Salad", "quantity": 1 },
+            { "date": "2025-02-10", "dish": "Margherita Pizza", "quantity": 1 }
+          ]
+        },
+        {
+          "id": "cust-003",
+          "name": "Robert Johnson",
+          "email": "robert.johnson@example.com",
+          "phone": "555-456-7890",
+          "visits": 12,
+          "purchased": [
+            { "dish": "Classic Burger", "quantity": 6 },
+            { "dish": "Mac and Cheese", "quantity": 2 },
+            { "dish": "Chocolate Lava Cake", "quantity": 4 }
+          ],
+          "history": [
+            { "date": "2025-03-25", "dish": "Classic Burger", "quantity": 1 },
+            { "date": "2025-03-25", "dish": "Chocolate Lava Cake", "quantity": 1 },
+            { "date": "2025-03-10", "dish": "Classic Burger", "quantity": 1 },
+            { "date": "2025-03-01", "dish": "Mac and Cheese", "quantity": 1 },
+            { "date": "2025-02-20", "dish": "Classic Burger", "quantity": 1 }
+          ]
+        }
+      ],
+      "staff": [
+        {
+          "id": "staff-001",
+          "name": "Marcus Chen",
+          "role": "Chef",
+          "salary": 58000,
+          "hireDate": "2023-03-15",
+          "specialties": ["Italian", "French"]
+        },
+        {
+          "id": "staff-002",
+          "name": "Sophia Rodriguez",
+          "role": "Server",
+          "salary": 42000,
+          "hireDate": "2023-05-20",
+          "tables": 8
+        },
+        {
+          "id": "staff-003",
+          "name": "David Kim",
+          "role": "Bartender",
+          "salary": 46000,
+          "hireDate": "2024-01-10",
+          "specialties": ["Cocktails", "Wine"]
+        },
+        {
+          "id": "staff-004",
+          "name": "Emma Davis",
+          "role": "Manager",
+          "salary": 65000,
+          "hireDate": "2022-11-05",
+          "responsibilities": ["Staff scheduling", "Customer relations", "Inventory management"]
+        }
+      ],
+      "stock": [
+        { "ingredient": "pasta", "quantity": 45, "unit": "kg", "reorderLevel": 10 },
+        { "ingredient": "cheddar cheese", "quantity": 12, "unit": "kg", "reorderLevel": 5 },
+        { "ingredient": "milk", "quantity": 30, "unit": "liter", "reorderLevel": 8 },
+        { "ingredient": "butter", "quantity": 8, "unit": "kg", "reorderLevel": 3 },
+        { "ingredient": "breadcrumbs", "quantity": 5, "unit": "kg", "reorderLevel": 2 },
+        { "ingredient": "beef", "quantity": 25, "unit": "kg", "reorderLevel": 10 },
+        { "ingredient": "lettuce", "quantity": 15, "unit": "head", "reorderLevel": 5 },
+        { "ingredient": "tomato", "quantity": 20, "unit": "kg", "reorderLevel": 5 },
+        { "ingredient": "onion", "quantity": 18, "unit": "kg", "reorderLevel": 5 },
+        { "ingredient": "bun", "quantity": 80, "unit": "piece", "reorderLevel": 25 },
+        { "ingredient": "special sauce", "quantity": 5, "unit": "liter", "reorderLevel": 2 },
+        { "ingredient": "romaine lettuce", "quantity": 10, "unit": "head", "reorderLevel": 3 },
+        { "ingredient": "parmesan cheese", "quantity": 7, "unit": "kg", "reorderLevel": 2 },
+        { "ingredient": "croutons", "quantity": 4, "unit": "kg", "reorderLevel": 1 },
+        { "ingredient": "caesar dressing", "quantity": 8, "unit": "liter", "reorderLevel": 2 },
+        { "ingredient": "chocolate", "quantity": 12, "unit": "kg", "reorderLevel": 5 },
+        { "ingredient": "flour", "quantity": 30, "unit": "kg", "reorderLevel": 10 },
+        { "ingredient": "sugar", "quantity": 25, "unit": "kg", "reorderLevel": 8 },
+        { "ingredient": "eggs", "quantity": 120, "unit": "piece", "reorderLevel": 30 },
+        { "ingredient": "vanilla ice cream", "quantity": 15, "unit": "liter", "reorderLevel": 5 },
+        { "ingredient": "pizza dough", "quantity": 40, "unit": "kg", "reorderLevel": 10 },
+        { "ingredient": "tomato sauce", "quantity": 25, "unit": "liter", "reorderLevel": 8 },
+        { "ingredient": "mozzarella cheese", "quantity": 10, "unit": "kg", "reorderLevel": 3 },
+        { "ingredient": "basil", "quantity": 1, "unit": "kg", "reorderLevel": 0.5 }
+      ]
+    }
+  ]
