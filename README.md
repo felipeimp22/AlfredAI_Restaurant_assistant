@@ -5,6 +5,8 @@
 
 ### Disclaimer
 I know the code may be messy and not following all best practices, but this was an 8 hour challenge.
+this is the other repo of this challenge:
+[https://github.com/felipeimp22/AlfredAI_front-end/blob/master/README.md](https://github.com/felipeimp22/AlfredAI_front-end/tree/master)
 ---
 ## Overview
 
