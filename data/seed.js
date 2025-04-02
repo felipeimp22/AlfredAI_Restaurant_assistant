@@ -1,3 +1,4 @@
+// data\seed.js
 import neo4j from "neo4j-driver";
 import { faker } from "@faker-js/faker";
 import { readFile } from "node:fs/promises";

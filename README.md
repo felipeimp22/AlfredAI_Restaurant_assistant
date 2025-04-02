@@ -19,6 +19,7 @@ This system combines the power of Neo4j graph database for complex relationship 
 - **Graph Data Analysis**: Leverages Neo4j to understand complex relationships between customers, menu items, and orders
 - **Multi-database Integration**: Combines the power of graph (Neo4j) and relational (PostgreSQL) databases
 - **RAG Architecture**: Enhances AI responses with knowledge from your actual restaurant data
+- **Authentication System**: Secure user management with JWT-based authentication
 - **Docker Integration**: Simple deployment with containerized infrastructure
 
 ## 🔧 Technology Stack
@@ -38,6 +39,7 @@ This system combines the power of Neo4j graph database for complex relationship 
   - Node.js
   - LangChain.js
   - HTTP API server
+  - JWT-based authentication
 
 - **Visualization**: 
   - Chart.js-compatible data structures
@@ -97,6 +99,9 @@ POSTGRES_HOST=localhost
 POSTGRES_DB=restaurant
 POSTGRES_PORT=5432
 
+JWT_SECRET=your-super-secret-jwt-token-with-at-least-32-characters
+JWT_EXPIRES_IN=24h
+
 NEO4J_VECTOR_THRESHOLD=0.85
 ```
 
@@ -141,6 +146,37 @@ npm run dev
 The server will be running at http://localhost:3002
 
 ## 📝 Usage Examples
+
+### Authentication
+
+The system provides user authentication with the following endpoints:
+
+```bash
+# Register a new user
+curl -X POST http://localhost:3002/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "yourpassword"
+  }'
+
+# Login
+curl -X POST http://localhost:3002/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "password": "yourpassword"
+  }'
+
+# Get current user session (requires auth token)
+curl -X GET http://localhost:3002/auth/session \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+
+# Logout (requires auth token)
+curl -X POST http://localhost:3002/auth/logout \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
 
 ### Making Simple Queries
 
@@ -233,6 +269,12 @@ restaurant-assistant/
 └── src/                        # Source code
     ├── ai.js                   # AI model integration
     ├── index.js                # Main application server
+    ├── middleware/             # Express middleware
+    │   └── authMiddleware.js   # JWT authentication middleware
+    ├── routes/                 # API routes
+    │   └── authRoutes.js       # Authentication endpoints
+    ├── services/               # Business logic
+    │   └── authService.js      # Authentication service
     └── utils/                  # Utility functions
         └── chartUtils.js       # Chart detection and generation
 ```
@@ -263,6 +305,22 @@ Restaurant Assistant can automatically generate visualization-ready data for:
 
 The chart data is formatted for easy integration with Chart.js, the most popular JavaScript charting library.
 
+## 🔐 Authentication System
+
+The application includes a complete JWT-based authentication system that:
+
+- Manages user registration and login securely
+- Creates matching customer records for registered users
+- Hashes passwords with bcrypt for security
+- Issues JWT tokens for authenticated API access
+- Supports role-based access control
+- Maintains user sessions with secure token verification
+
+This authentication system is built on:
+- JSON Web Tokens (JWT) for stateless authentication
+- PostgreSQL database for user data storage
+- Express middleware for protecting routes
+
 ## 🔄 Extending the System
 
 To add new restaurant data types or query capabilities:
@@ -275,7 +333,3 @@ To add new restaurant data types or query capabilities:
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
